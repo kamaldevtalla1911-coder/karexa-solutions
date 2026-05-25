@@ -105,7 +105,8 @@ a {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.site-nav a.active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
   outline: none;
@@ -245,6 +246,28 @@ h1 {
   width: 100%;
 }
 
+.page-hero {
+  padding: 142px clamp(20px, 5vw, 70px) 72px;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(4, 29, 27, 0.94), rgba(8, 79, 73, 0.86)),
+    url("assets/karexa-workflow-hero.png") center / cover;
+}
+
+.page-hero h1 {
+  max-width: 900px;
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 0.98;
+}
+
+.page-hero p {
+  max-width: 760px;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.6;
+}
+
 .intro,
 .section,
 .approach,
@@ -332,6 +355,61 @@ h1 {
   line-height: 1.2;
 }
 
+.detail-grid,
+.blog-grid,
+.metric-grid,
+.feature-list {
+  display: grid;
+  gap: 18px;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detail-card,
+.blog-card,
+.metric-grid article,
+.feature-list article {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(18, 49, 46, 0.07);
+}
+
+.detail-card.wide {
+  grid-column: 1 / -1;
+}
+
+.detail-card h2,
+.blog-card h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.08;
+}
+
+.detail-card p,
+.blog-card p,
+.metric-grid p,
+.feature-list p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.detail-card ul {
+  margin: 20px 0 0;
+  padding-left: 20px;
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+.detail-card li + li {
+  margin-top: 8px;
+}
+
 .approach {
   background: #092f2c;
   color: #ffffff;
@@ -362,6 +440,11 @@ h1 {
 
 .steps p {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.process-page {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .impact {
@@ -398,6 +481,56 @@ h1 {
   color: var(--teal-dark);
   background: #f7fbfa;
   font-weight: 800;
+}
+
+.feature-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-list h3,
+.metric-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-grid strong {
+  color: var(--teal-dark);
+}
+
+.contact-page {
+  margin: 0;
+}
+
+.blog-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.blog-card span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-card h2 {
+  font-size: clamp(22px, 2.4vw, 30px);
+}
+
+.blog-card a {
+  display: inline-flex;
+  margin-top: 22px;
+  color: var(--teal-dark);
+  font-weight: 850;
+  text-decoration: none;
 }
 
 .contact {
@@ -473,8 +606,14 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .steps {
+  .steps,
+  .blog-grid,
+  .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -541,7 +680,10 @@ h1 {
   }
 
   .service-grid,
-  .steps {
+  .steps,
+  .detail-grid,
+  .blog-grid,
+  .metric-grid {
     grid-template-columns: 1fr;
   }
 
