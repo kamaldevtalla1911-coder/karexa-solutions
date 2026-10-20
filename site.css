@@ -122,32 +122,36 @@ a {
   display: grid;
   align-items: center;
   min-height: min(780px, 88vh);
-  padding: 128px clamp(20px, 5vw, 70px) 76px;
+  padding: max(128px, calc(76px + 28.125vw + 32px)) clamp(20px, 5vw, 70px) 76px;
   overflow: hidden;
   color: #ffffff;
+  background: var(--deep-navy);
 }
 
 .hero-media,
 .hero-overlay {
   position: absolute;
-  inset: 0;
 }
 
 .hero-media {
+  inset: 76px 0 auto;
+  height: 28.125vw;
   background-image: url("assets/karexa-cover-web.png");
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.02);
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .hero-overlay {
+  inset: calc(76px + 28.125vw) 0 0;
   background:
-    linear-gradient(90deg, rgba(7, 30, 85, 0.94) 0%, rgba(7, 30, 85, 0.74) 42%, rgba(7, 30, 85, 0.12) 100%),
-    linear-gradient(0deg, rgba(7, 30, 85, 0.5), rgba(39, 199, 189, 0.08));
+    linear-gradient(90deg, rgba(7, 30, 85, 0.98) 0%, rgba(7, 30, 85, 0.9) 55%, rgba(7, 30, 85, 0.68) 100%),
+    linear-gradient(0deg, rgba(7, 30, 85, 0.98), rgba(23, 55, 131, 0.52));
 }
 
 .hero-content {
   position: relative;
+  z-index: 1;
   max-width: 780px;
 }
 
@@ -773,11 +777,16 @@ h1 {
 
   .hero {
     min-height: 760px;
-    padding-top: 114px;
+    padding-top: max(114px, calc(70px + 28.125vw + 24px));
+  }
+
+  .hero-media {
+    top: 70px;
   }
 
   .hero-overlay {
-    background: linear-gradient(90deg, rgba(7, 30, 85, 0.94), rgba(7, 30, 85, 0.72));
+    top: calc(70px + 28.125vw);
+    background: linear-gradient(180deg, rgba(7, 30, 85, 0.78), rgba(7, 30, 85, 0.98));
   }
 
   .intro,
