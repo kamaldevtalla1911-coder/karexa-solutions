@@ -668,6 +668,45 @@ h1 {
   color: #176b45;
 }
 
+.thanks-dialog {
+  width: min(92vw, 520px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.thanks-dialog::backdrop {
+  background: rgba(7, 30, 85, 0.68);
+  backdrop-filter: blur(4px);
+}
+
+.thanks-content {
+  padding: clamp(28px, 6vw, 46px);
+}
+
+.thanks-content h2 {
+  margin-bottom: 14px;
+  font-size: clamp(28px, 5vw, 38px);
+  line-height: 1.1;
+}
+
+.thanks-content p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.thanks-content form {
+  margin-top: 26px;
+}
+
+.thanks-content button {
+  border: 0;
+  cursor: pointer;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

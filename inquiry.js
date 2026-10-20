@@ -2,6 +2,7 @@ import { supabase } from "./supabase-client.js";
 
 const form = document.querySelector("#inquiry-form");
 const status = document.querySelector("#inquiry-status");
+const thanksDialog = document.querySelector("#thanks-dialog");
 const submitButton = form.querySelector('button[type="submit"]');
 
 form.addEventListener("submit", async (event) => {
@@ -26,8 +27,8 @@ form.addEventListener("submit", async (event) => {
     }
 
     form.reset();
-    status.textContent = "Thank you. Your inquiry has been sent.";
-    status.classList.add("success");
+    status.textContent = "";
+    thanksDialog.showModal();
   } catch (error) {
     console.error("Unable to save project inquiry.", error);
     status.textContent = ["PGRST205", "42501"].includes(error.code)
