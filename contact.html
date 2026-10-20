@@ -8,7 +8,7 @@
       name="description"
       content="Contact Karexa Solutions for AppSheet applications, automation, ERP consultation, dashboards, and digital workflow implementation."
     />
-    <link rel="stylesheet" href="site.css?v=brand-20260525" />
+    <link rel="stylesheet" href="site.css?v=inquiry-20261020" />
   </head>
   <body>
     <header class="site-header">
@@ -32,11 +32,56 @@
     <main>
       <section class="page-hero">
         <span class="section-kicker">Contact</span>
-        <h1>Tell us what is still manual in your business.</h1>
+        <h1>Start a project inquiry.</h1>
         <p>
           Share your current workflow, reporting challenge, or automation idea.
           We will help identify the most practical next step.
         </p>
+      </section>
+
+      <section class="section inquiry-section" aria-labelledby="inquiry-title">
+        <div class="section-head">
+          <span class="section-kicker">Project inquiry</span>
+          <h2 id="inquiry-title">Tell us how we can help.</h2>
+          <p>Choose a service and share a few details. We will follow up with you.</p>
+        </div>
+        <form id="inquiry-form" class="inquiry-form">
+          <div class="form-grid">
+            <label>
+              Name
+              <input name="full_name" type="text" autocomplete="name" maxlength="120" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" maxlength="254" required />
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" autocomplete="tel" maxlength="30" />
+            </label>
+            <label>
+              Company
+              <input name="company" type="text" autocomplete="organization" maxlength="160" />
+            </label>
+            <label class="form-field-wide">
+              Service you are interested in
+              <select name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option>AppSheet Custom Applications</option>
+                <option>Business Process Automation</option>
+                <option>ERP Consultation &amp; Support</option>
+                <option>Data Management &amp; Reporting</option>
+                <option>Workflow Optimization</option>
+              </select>
+            </label>
+            <label class="form-field-wide">
+              Tell us about your needs
+              <textarea name="message" rows="5" maxlength="5000" required></textarea>
+            </label>
+          </div>
+          <button class="button primary" type="submit">Send Inquiry</button>
+          <p id="inquiry-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
 
       <section class="contact contact-page">
@@ -57,16 +102,20 @@
             <span>Phone</span>
             <strong>8010338369</strong>
           </a>
-          <a class="button primary full" href="mailto:Sales@karexasolutions.com?subject=Digital%20Transformation%20Consultation">Request Consultation</a>
+          <a class="button primary full" href="#inquiry-form">Request Consultation</a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <p>&copy; <span id="year"></span> Karexa Solutions. All rights reserved.</p>
-      <a href="index.html">Back home</a>
+      <div class="footer-links">
+        <a href="admin.html">Admin login</a>
+        <a href="index.html">Back home</a>
+      </div>
     </footer>
 
     <script src="site.js"></script>
+    <script type="module" src="inquiry.js"></script>
   </body>
 </html>

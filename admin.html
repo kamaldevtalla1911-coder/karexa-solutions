@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inquiry Admin | Karexa Solutions</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="site.css?v=inquiry-20261020" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Karexa Solutions home">
+        <img class="brand-logo" src="assets/karexa-logo-web.png" alt="Karexa Solutions" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="services.html">Services</a>
+        <a href="approach.html">Approach</a>
+        <a href="impact.html">Impact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <span class="section-kicker">Admin</span>
+        <h1>Project inquiries</h1>
+        <p>Sign in with your authorized account to view submitted inquiries.</p>
+      </section>
+
+      <section class="section admin-section">
+        <div id="login-panel" class="admin-card">
+          <h2>Admin login</h2>
+          <form id="login-form" class="admin-login-form">
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="username" required />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" autocomplete="current-password" required />
+            </label>
+            <button class="button primary" type="submit">Sign in</button>
+          </form>
+          <p id="login-status" class="form-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div id="inquiries-panel" class="admin-card" hidden>
+          <div class="admin-heading">
+            <h2>Submitted inquiries</h2>
+            <button id="logout-button" class="button secondary admin-logout" type="button">Sign out</button>
+          </div>
+          <p id="admin-status" class="form-status" role="status" aria-live="polite"></p>
+          <div class="table-scroll">
+            <table class="inquiry-table">
+              <thead>
+                <tr>
+                  <th scope="col">Received</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Contact</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Project details</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="inquiries-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Karexa Solutions. All rights reserved.</p>
+      <a href="contact.html">Back to contact</a>
+    </footer>
+
+    <script src="site.js"></script>
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>
