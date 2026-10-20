@@ -30,7 +30,9 @@ form.addEventListener("submit", async (event) => {
     status.classList.add("success");
   } catch (error) {
     console.error("Unable to save project inquiry.", error);
-    status.textContent = "We couldn't send your inquiry. Please try again or email Sales@karexasolutions.com.";
+    status.textContent = ["PGRST205", "42501"].includes(error.code)
+      ? "Supabase isn't set up for inquiries yet. Run supabase/inquiries.sql in your Supabase SQL Editor, then try again."
+      : "We couldn't send your inquiry. Please try again or email Sales@karexasolutions.com.";
     status.classList.remove("success");
   } finally {
     submitButton.disabled = false;

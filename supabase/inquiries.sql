@@ -14,27 +14,20 @@ create table if not exists public.inquiries (
       'Workflow Optimization'
     )
   ),
-  message text not null check (char_length(trim(message)) between 1 and 5000),
-  status text not null default 'new' check (status in ('new', 'contacted', 'closed'))
+  message text not null check (char_length(trim(message)) between 1 and 5000)
 );
 
 alter table public.inquiries enable row level security;
 
 revoke all on table public.inquiries from public, anon, authenticated;
 grant insert (full_name, email, phone, company, service, message)
-  on table public.inquiries to anon, authenticated;
-grant select on table public.inquiries to authenticated;
+  on table public.inquiries to anon;
 
 drop policy if exists inquiries_public_insert on public.inquiries;
 create policy inquiries_public_insert
   on public.inquiries
   for insert
-  to anon, authenticated
-  with check (status = 'new');
+  to anon
+  with check (true);
 
 drop policy if exists inquiries_admin_read on public.inquiries;
-create policy inquiries_admin_read
-  on public.inquiries
-  for select
-  to authenticated
-  using (lower(coalesce(auth.jwt() ->> 'email', '')) = 'kamaldevtalla1911@gmail.com');

@@ -668,80 +668,6 @@ h1 {
   color: #176b45;
 }
 
-.admin-section {
-  min-height: 340px;
-}
-
-.admin-card h2 {
-  margin-bottom: 24px;
-  font-size: clamp(24px, 3vw, 34px);
-}
-
-.admin-card[hidden] {
-  display: none;
-}
-
-.admin-login-form {
-  display: grid;
-  max-width: 480px;
-  gap: 18px;
-}
-
-.admin-login-form > .button {
-  border: 0;
-  cursor: pointer;
-}
-
-.admin-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.admin-logout {
-  flex: 0 0 auto;
-  border: 1px solid var(--line);
-  color: var(--navy);
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.table-scroll {
-  overflow-x: auto;
-}
-
-.inquiry-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.inquiry-table th,
-.inquiry-table td {
-  min-width: 110px;
-  padding: 14px 12px;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
-  line-height: 1.55;
-}
-
-.inquiry-table th {
-  color: var(--navy);
-  font-size: 13px;
-}
-
-.inquiry-table td {
-  color: var(--muted);
-  font-size: 14px;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.inquiry-table td a {
-  color: var(--navy);
-}
-
 .footer {
   display: flex;
   justify-content: space-between;
@@ -756,11 +682,6 @@ h1 {
   color: var(--navy);
   font-weight: 800;
   text-decoration: none;
-}
-
-.footer-links {
-  display: flex;
-  gap: 18px;
 }
 
 @media (max-width: 1180px) {
@@ -859,11 +780,6 @@ h1 {
 
   .form-field-wide {
     grid-column: auto;
-  }
-
-  .admin-heading {
-    align-items: flex-start;
-    flex-direction: column;
   }
 
   .intro,
