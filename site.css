@@ -2,19 +2,19 @@
 
 :root {
   color-scheme: light;
-  --ink: #142b3b;
-  --muted: #60717e;
-  --line: #e1e9ed;
+  --ink: #11285f;
+  --muted: #667085;
+  --line: #d9e5f5;
   --paper: #ffffff;
-  --mist: #f4f8f8;
-  --teal: #0c9b91;
-  --teal-dark: #087b74;
-  --blue: #2468c9;
-  --navy: #173d58;
-  --deep-navy: #102f43;
-  --gold: #e7a938;
-  --shadow: 0 22px 60px rgba(20, 43, 59, 0.12);
-  --soft-shadow: 0 12px 32px rgba(20, 43, 59, 0.07);
+  --mist: #f5f9fd;
+  --teal: #27c7bd;
+  --teal-dark: #0ba7bd;
+  --blue: #176bd6;
+  --navy: #173783;
+  --deep-navy: #071e55;
+  --gold: #27c7bd;
+  --shadow: 0 22px 60px rgba(13, 45, 105, 0.14);
+  --soft-shadow: 0 12px 32px rgba(13, 45, 105, 0.07);
   --content-width: 1240px;
   font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
@@ -154,29 +154,15 @@ textarea {
   overflow: hidden;
   color: #ffffff;
   background:
-    radial-gradient(ellipse at 82% 78%, rgba(14, 155, 145, 0.22), transparent 34%),
-    linear-gradient(135deg, #102f43 0%, #173d58 58%, #124f5a 100%);
-}
-
-.hero-media,
-.hero-overlay {
-  position: absolute;
-}
-
-.hero-media {
-  inset: 76px 0 auto;
-  height: 28.125vw;
-  background-image: url("assets/karexa-cover-web.png");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.hero-overlay {
-  inset: calc(76px + 28.125vw) 0 0;
-  background:
-    radial-gradient(ellipse at 82% 80%, rgba(17, 158, 147, 0.16), transparent 42%),
-    linear-gradient(90deg, rgba(16, 47, 67, 0.98), rgba(23, 61, 88, 0.94) 64%, rgba(18, 79, 90, 0.88));
+    linear-gradient(
+      180deg,
+      rgba(7, 30, 85, 0) 0,
+      rgba(7, 30, 85, 0) calc(76px + 28.125vw - 90px),
+      rgba(7, 30, 85, 0.96) calc(76px + 28.125vw + 68px),
+      #071e55 100%
+    ),
+    url("assets/karexa-cover-web.png") center 76px / 100% auto no-repeat,
+    linear-gradient(135deg, #173783 0%, #071e55 72%, #0b5275 100%);
 }
 
 .hero-content {
@@ -191,7 +177,7 @@ textarea {
   align-items: center;
   gap: 10px;
   margin: 0 0 16px;
-  color: #3ac4b6;
+  color: var(--teal);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -295,8 +281,8 @@ h1 {
   overflow: hidden;
   color: #ffffff;
   background:
-    radial-gradient(ellipse at 83% 0%, rgba(45, 185, 169, 0.22), transparent 33%),
-    linear-gradient(125deg, #102f43 0%, #173d58 62%, #164e58 100%);
+    radial-gradient(ellipse at 83% 0%, rgba(39, 199, 189, 0.18), transparent 33%),
+    linear-gradient(125deg, #071e55 0%, #173783 62%, #0b5275 100%);
 }
 
 .page-hero::after {
@@ -511,7 +497,7 @@ h1 {
 .approach {
   color: #ffffff;
   background:
-    radial-gradient(ellipse at 90% 4%, rgba(45, 185, 169, 0.13), transparent 34%),
+    radial-gradient(ellipse at 90% 4%, rgba(39, 199, 189, 0.13), transparent 34%),
     var(--deep-navy);
 }
 
@@ -700,8 +686,8 @@ h1 {
   align-items: center;
   color: #ffffff;
   background:
-    radial-gradient(ellipse at 86% 4%, rgba(45, 185, 169, 0.16), transparent 36%),
-    linear-gradient(125deg, #102f43, #173d58 66%, #164e58);
+    radial-gradient(ellipse at 86% 4%, rgba(39, 199, 189, 0.16), transparent 36%),
+    linear-gradient(125deg, #071e55, #173783 66%, #0b5275);
 }
 
 .contact h2 {
@@ -951,7 +937,7 @@ h1 {
     display: none;
     padding: 14px 20px 22px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    background: #102f43;
+    background: var(--deep-navy);
     box-shadow: 0 18px 32px rgba(16, 47, 67, 0.2);
   }
 
@@ -987,17 +973,6 @@ h1 {
   .hero {
     min-height: 690px;
     padding: max(112px, calc(70px + 28.125vw + 34px)) 24px 72px;
-  }
-
-  .hero-media {
-    top: 70px;
-  }
-
-  .hero-overlay {
-    top: calc(70px + 28.125vw);
-    background:
-      radial-gradient(ellipse at 80% 75%, rgba(14, 155, 145, 0.18), transparent 44%),
-      linear-gradient(180deg, rgba(16, 47, 67, 0.88), #102f43 72%);
   }
 
   .page-hero {
@@ -1036,6 +1011,16 @@ h1 {
   .hero {
     min-height: 700px;
     padding-top: max(110px, calc(70px + 28.125vw + 30px));
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 30, 85, 0) 0,
+        rgba(7, 30, 85, 0) calc(70px + 28.125vw - 75px),
+        rgba(7, 30, 85, 0.97) calc(70px + 28.125vw + 52px),
+        #071e55 100%
+      ),
+      url("assets/karexa-cover-web.png") center 70px / 100% auto no-repeat,
+      linear-gradient(135deg, #173783 0%, #071e55 72%, #0b5275 100%);
   }
 
   .hero-actions,
